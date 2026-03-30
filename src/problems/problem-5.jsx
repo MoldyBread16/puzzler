@@ -45,7 +45,7 @@ function Problem5() {
   // TODO: handleDrop(e, toIndex): e.preventDefault(); get pieceId from e.dataTransfer.getData("text/plain"); find fromIndex = slotIds.indexOf(pieceId); copy slotIds, swap next[fromIndex] and next[toIndex], then setSlotIds(next).
   const handleDrop = (e, toIndex) => {
     e.preventDefault();
-    const pieceId = parseInt(e.dataTransfer.getData("text/plain"));
+    const pieceId = Number(e.dataTransfer.getData("text/plain"));
     const fromIndex = slotIds.indexOf(pieceId);
     const next = [...slotIds];
     [next[fromIndex], next[toIndex]] = [next[toIndex], next[fromIndex]];
